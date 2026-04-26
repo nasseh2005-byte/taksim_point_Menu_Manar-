@@ -32,17 +32,14 @@
         .slider-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; }
         .slide { min-width: 100%; scroll-snap-align: center; }
 
-        /* قسم الاستكشاف */
         .tiktok-container { height: 100dvh; overflow-y: scroll; scroll-snap-type: y mandatory; }
         .tiktok-item { height: 100dvh; scroll-snap-align: start; position: relative; }
         .drive-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 0; }
 
-        /* أمر قلب الصورة برمجياً كمرآة */
         .mirror-img {
             transform: scaleX(-1);
         }
 
-        /* تنسيق غلاف القسم (البانر) */
         .category-container {
             margin-bottom: 40px; border-radius: 16px; overflow: hidden;
             border: 1px solid var(--border-color); background-color: #0d0d0d;
@@ -62,7 +59,6 @@
             position: absolute; bottom: 15px; right: 15px; z-index: 10;
         }
 
-        /* زر الأكثر طلباً المتحرك */
         .most-requested-btn {
             background: linear-gradient(to right, #D4AF37, #B38728); color: #000; font-weight: 900;
             font-size: 10px; padding: 4px 10px; border-radius: 6px; display: flex; align-items: center; gap: 4px;
@@ -121,17 +117,6 @@
         </div>
     </div>
 
-    <div x-show="showQRModal" x-cloak class="fixed inset-0 z-[200] bg-black/90 flex flex-col items-center justify-center p-6 backdrop-blur-md">
-        <button @click="showQRModal = false" class="absolute top-6 right-6 text-white text-3xl font-black">✕</button>
-        <div class="theme-card border-[var(--border-color)] p-8 rounded-2xl flex flex-col items-center shadow-[0_0_40px_rgba(232,217,182,0.1)]">
-            <h2 class="font-black text-xl mb-1 text-center text-brand-gold">تقسيم بوينت | فرع المنار</h2>
-            <div class="bg-white p-3 rounded-xl mb-6">
-                <img :src="'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(window.location.href)" class="w-48 h-48">
-            </div>
-            <button @click="copyBranchUrl()" class="w-full bg-gradient-to-r from-[var(--white-gold)] to-[#B38728] text-black font-black py-3 rounded-lg flex items-center justify-center gap-2 transition active:scale-95">🔗 نسخ رابط المنيو</button>
-        </div>
-    </div>
-
     <div x-show="isLoading" class="fixed inset-0 z-[200] bg-[var(--bg-main)] flex flex-col items-center justify-center">
         <img src="https://cdn.phototourl.com/free/2026-04-06-d0b6c388-fcdf-40fd-a7dc-56a84b8309a2.png" class="h-20 mb-6 animate-pulse">
         <div class="text-brand-gold text-sm font-black tracking-widest uppercase">Taksim Point Al-Manar...</div>
@@ -141,7 +126,7 @@
         <section class="px-6 mb-8 text-center">
             <img src="https://cdn.phototourl.com/free/2026-04-06-d0b6c388-fcdf-40fd-a7dc-56a84b8309a2.png" class="h-20 mx-auto mb-6 object-contain">
             <h1 class="text-2xl font-black mb-4 text-brand-gold tracking-wide">تقسيم بوينت | فرع المنار</h1>
-            <p class="text-sm text-brand-gold opacity-90 leading-relaxed font-medium">استمتع بألذ المأكولات التركية العالمية في فرعنا بحي المنار.</p>
+            <p class="text-sm text-brand-gold opacity-90 leading-relaxed font-medium">أهلاً بكم في فرع حي المنار، نتشرف بخدمتكم بألذ المأكولات التركية العالمية.</p>
         </section>
 
         <section class="relative h-[30vh] w-full mb-10 px-4">
@@ -164,7 +149,7 @@
         <section class="px-6 mb-6">
             <h3 class="text-lg font-black mb-4 text-center text-brand-gold tracking-wide">موقعنا بالمنار</h3>
             <div class="overflow-hidden rounded-2xl shadow-xl border border-[var(--border-color)] p-1 bg-[var(--card-bg)]">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.386486430979!2d41.07816606016587!3d19.134552382156638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e68f00666986fd%3A0xc81a3e382a661914!2z2YXYt9i52YUg2KrZgtiz2YrZhSDYqNmI2YrZhtiqIHwgVGFrc2ltcG9pbnQgcmVzdGF1cmFudHM!5e0!3m2!1sar!2ssa!4v1776361993640!5m2!1sar!2ssa" width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237390.7503461374!2d39.41345214843751!3d21.615940981653758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3db004673f109%3A0xa40a38ea0b786d88!2z2YXYt9i52YUg2KrZgtiz2YrZhSDYqNmI2YrZhtiqIHwgVGFrc2ltcG9pbnQgcmVzdGF1cmFudHM!5e0!3m2!1sar!2ssa!4v1776364267628!5m2!1sar!2ssa" width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
@@ -195,7 +180,6 @@
     </div>
 
     <div x-show="view === 'menu'" class="min-h-screen pt-20 pb-32" x-cloak>
-        
         <div class="fixed top-[65px] left-0 w-full z-40 transition-transform duration-300" :class="showCatBar ? 'translate-y-0' : '-translate-y-full'">
             <div class="flex gap-2 overflow-x-auto no-scrollbar px-4 py-2 glass-nav border-b border-[var(--border-color)]">
                 <template x-for="cat in normalCategories" :key="cat">
@@ -206,9 +190,7 @@
 
         <div class="px-4 mt-12">
             <template x-for="cat in normalCategories" :key="cat">
-                
                 <div class="category-container scroll-mt-[130px]" :id="'cat-' + btoa(unescape(encodeURIComponent(cat))).replace(/=/g, '')">
-                    
                     <div class="category-banner border-b border-[var(--border-color)]">
                         <img :src="getCategoryBg(cat)" class="mirror-img" loading="lazy">
                         <div class="category-banner-overlay"></div>
@@ -223,7 +205,6 @@
                     <div class="p-4 md:p-6 flex flex-col gap-5">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <template x-for="item in getCatItems(cat)" :key="item.id">
-                                
                                 <div class="flex flex-col relative theme-card rounded-xl p-4 transition-all"
                                      :class="(item.name.includes('جريل') || item.name.toLowerCase().includes('grill')) ? 'border-[var(--gold)] bg-[var(--gold)]/10 shadow-[0_0_20px_rgba(212,175,55,0.15)]' : 'border-[var(--border-color)]/50'">
                                     
@@ -327,29 +308,30 @@
         function taksimApp() {
             return {
                 isLoading: true, view: 'home', currentLang: 'ar', 
-                showSearchModal: false, showQRModal: false, showInvoiceModal: false, searchQuery: '',        
+                showSearchModal: false, showInvoiceModal: false, searchQuery: '',        
                 showCatBar: true, lastScroll: 0,
                 allRawData: [], activeMenuItems: [], activeExploreItems: [], heroOffers: [], categoryBgs: {}, likes: [], quantities: {},
                 targetHeroIds: ['TP-116', 'TP-185', 'TP-186', 'TP-003', 'TP-004'],
 
                 langLinks: {
-                    ar: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=2026156602&single=true&output=csv',
-                    en: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1709873212&single=true&output=csv',
-                    tr: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=932024028&single=true&output=csv',
-                    es: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=2126154876&single=true&output=csv',
-                    ru: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1383179966&single=true&output=csv',
-                    ur: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1356221249&single=true&output=csv',
-                    hi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1947060246&single=true&output=csv',
-                    fr: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1967929524&single=true&output=csv',
-                    de: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=330421505&single=true&output=csv',
-                    zh: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=597359201&single=true&output=csv',
-                    ja: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1140262731&single=true&output=csv',
-                    ko: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=961009172&single=true&output=csv',
-                    it: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1885756520&single=true&output=csv',
-                    vi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=37768217&single=true&output=csv',
-                    th: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=369450170&single=true&output=csv',
-                    id: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVNQZ9He56FI0mC4d1sODaF45FLXpqLova9aBVgQHFzzFzNiwJP_F1BSDBntCI6s5iaz37aGlK2Q3F/pub?gid=1467238039&single=true&output=csv'
+                    ar: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=2026156602',
+                    en: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1709873212',
+                    tr: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=932024028',
+                    es: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=2126154876',
+                    ru: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1383179966',
+                    ur: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1356221249',
+                    hi: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1947060246',
+                    fr: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1967929524',
+                    de: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=330421505',
+                    zh: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=597359201',
+                    ja: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1140262731',
+                    ko: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=961009172',
+                    it: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1885756520',
+                    vi: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=37768217',
+                    th: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=369450170',
+                    id: 'https://docs.google.com/spreadsheets/d/1RStxk-Y16_Sep8GzpepbF3Ve7sKL0hvPkJ1OS2O3aRw/export?format=csv&gid=1467238039'
                 },
+
                 get isRTL() { return ['ar', 'ur'].includes(this.currentLang); },
                 handleScroll() { this.showCatBar = window.pageYOffset <= this.lastScroll; this.lastScroll = window.pageYOffset; },
                 
@@ -376,7 +358,9 @@
                                     return {
                                         id: id, category: cat, name: (cols[2] || '').trim(),
                                         price: (cols[3] || '').trim(), description: (cols[5] || '').trim(),
-                                        image: (cols[6] || '').trim(), available: cols.length > 7 ? (cols[7] || '').trim() : '' // توفر المنار (العمود الثامن)
+                                        image: (cols[6] || '').trim(),
+                                        // البحث عن "غير متوفر" في أي عمود لضمان التوافق مع شيت المنار
+                                        available: cols.some(c => c && c.trim() === 'غير متوفر') ? 'غير متوفر' : 'متوفر'
                                     }
                                 }).filter(i => i.id.startsWith('TP-'));
                                 
@@ -428,13 +412,13 @@
                     this.playSound('pop');
                     if(this.likes.includes(item.id)) { this.likes = this.likes.filter(id => id !== item.id); delete this.quantities[item.id]; } 
                     else { this.likes.push(item.id); this.quantities[item.id] = 1; }
-                    localStorage.setItem('manar_likes_v10', JSON.stringify(this.likes));
-                    localStorage.setItem('manar_qty_v10', JSON.stringify(this.quantities));
+                    localStorage.setItem('manar_likes_v40', JSON.stringify(this.likes));
+                    localStorage.setItem('manar_qty_v40', JSON.stringify(this.quantities));
                 },
                 isLiked(id) { return this.likes.includes(id); },
                 updateQty(id, d) { 
                     this.quantities[id] = Math.max(1, (this.quantities[id] || 1) + d); 
-                    localStorage.setItem('manar_qty_v10', JSON.stringify(this.quantities));
+                    localStorage.setItem('manar_qty_v40', JSON.stringify(this.quantities));
                 },
                 get likedItemsList() { return this.likes.map(id => this.allRawData.find(i => i.id === id)).filter(Boolean); },
                 calculateTotal() {
@@ -442,11 +426,10 @@
                         return sum + (parseFloat(item.price) || 0) * (this.quantities[item.id] || 1);
                     }, 0).toFixed(2);
                 },
-                copyBranchUrl() { navigator.clipboard.writeText(window.location.origin).then(() => alert('تم النسخ!')); },
                 
                 initApp() { 
-                    const saved = localStorage.getItem('manar_likes_v10'); if(saved) this.likes = JSON.parse(saved);
-                    const savedQ = localStorage.getItem('manar_qty_v10'); if(savedQ) this.quantities = JSON.parse(savedQ);
+                    const saved = localStorage.getItem('manar_likes_v40'); if(saved) this.likes = JSON.parse(saved);
+                    const savedQ = localStorage.getItem('manar_qty_v40'); if(savedQ) this.quantities = JSON.parse(savedQ);
                     this.changeLanguage(); 
                     setInterval(() => { this.startAutoScroll(); }, 5000);
                 },
